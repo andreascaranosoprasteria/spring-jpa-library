@@ -31,6 +31,9 @@ public class User {
 	@NotNull(message = "must be not null")
 	private String phoneNumber;
 	
+	@NotNull
+	private String password;
+	
 	@OneToMany(mappedBy = "user")
 	@JsonBackReference	
 	private List<Borrowing> borrowings;
@@ -89,6 +92,20 @@ public class User {
 
 	public void setBorrowings(List<Borrowing> borrowings) {
 		this.borrowings = borrowings;
+	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	
